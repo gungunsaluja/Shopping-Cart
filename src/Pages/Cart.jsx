@@ -1,5 +1,14 @@
+import { useSelector } from "react-redux";
+
 const Cart = () =>{
-    return <div>Cart</div>;
+    const {cart} = useSelector((state)=>state);
+    return (<div>
+        {
+            cart.length > 0 ? ():()
+        }
+    </div>
+
+    );
 
 };
 export default Cart;
