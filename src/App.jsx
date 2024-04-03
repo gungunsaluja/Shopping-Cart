@@ -3,12 +3,12 @@ import Home from './Pages/Home';
 import {Routes} from 'react-router-dom';
 import {Route} from 'react-router-dom';
 import Cart from './Pages/Cart';
-function App() {
+const App = ()=> {
   
 
   return (
-    <div>
-      <div>
+    <div >
+      <div className='bg-slate-900 '>
       <Navbar/>
       </div>
       <Routes>
@@ -19,7 +19,7 @@ function App() {
       </Routes>
    
     </div>
-  )
+  );
 }
 
 export default App
