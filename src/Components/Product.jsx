@@ -14,7 +14,7 @@ const Product = ({ post }) => {
     toast.error("Item removed from cart");
   };
   return (
-    <div className="flex flex-col items-center justify-between hover:scale-110 transition duration-300 ease-in gap-3 p-4 mt-10 ml-5 rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] outline">
+    <div className="flex flex-col items-center justify-between hover:scale-110 transition duration-300 ease-in gap-3 p-4 mt-10 ml-5 rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] hover:border-blue-300 outline">
       <div>
         <p className="text-gray-700 font-semibold text-lg text-left truncate w-40 mt-1">
           {post.title}
@@ -46,7 +46,7 @@ const Product = ({ post }) => {
       ) : (
         <button
           onClick={addToCart}
-          className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in"
+          className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in "
         >
           Add to Cart
         </button>
