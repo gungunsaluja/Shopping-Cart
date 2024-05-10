@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 
 
 const Cart = () => {
+  // cart slice me empty array se initialize kiya h usse track kar re hai ki state kya useselector ka use karke hum state ko fetch karte haii!!
   const { cart } = useSelector((state) => state);
+  // useselector ke use se humne dekha hmare pass kya state pdii hai or jo state padi h vahii state return krdenge!!
+  // useselector se humne cart ka data nikal liyaa!
   console.log("Printing cart");
   console.log(cart);
 

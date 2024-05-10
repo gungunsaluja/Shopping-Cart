@@ -12,10 +12,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   
   
     <BrowserRouter>
+    {/* routes create kar skte hai */}
   
     {/* isse routes create kar skte hai */}
   <Provider store = {store}>
+    {/* provider redux ke liye use kiya haiii */}
     <App />
+
     <Toaster/>
   </Provider>
   </BrowserRouter>

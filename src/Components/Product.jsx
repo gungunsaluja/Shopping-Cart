@@ -7,10 +7,12 @@ const Product = ({ post }) => {
   const dispatch = useDispatch();
   const addToCart = () => {
     dispatch(add(post));
+    // is input ko access hi payload se krenge
     toast.success("Item added to Cart");
   };
   const removeFromCart = () => {
     dispatch(remove(post.id));
+    // input de re h joo cartslice me action payload se handle hoga
     toast.error("Item removed from cart");
   };
   return (
@@ -35,6 +37,7 @@ const Product = ({ post }) => {
         {
       false ? <p>Remove Items</p> : <p>Add to Cart</p>} 
       </button>  */}
+      {/* cart me item phle se pdi h tw remove ka button dikhao or nhi padi h rw add to cart ka button dikhao */}
 
       {cart.some((p) => p.id === post.id) ? (
         <button
