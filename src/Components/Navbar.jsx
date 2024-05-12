@@ -2,9 +2,12 @@ import {FaShoppingCart} from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import logo from "../assets/logo.png";
+import { useState } from 'react';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-export default function Navbar (){
+export default function Navbar ({isDarkMode,setDarkMode,toggleDarkMode}){
     const {cart} = useSelector((state)=>state);
+    
     return (
       <div>
         <nav className="flex justify-between items-center h-20 max-w-6xl mx-auto">
@@ -32,6 +35,13 @@ export default function Navbar (){
 
                     </div>
                 </NavLink>
+               
+                <DarkModeSwitch
+                       
+                       checked={isDarkMode}
+                       onChange={toggleDarkMode}
+                       size={30}
+                   />
                
 
               

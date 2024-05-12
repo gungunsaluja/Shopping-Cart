@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Spinner from "../Components/Spinner";
 import Product from "../Components/Product";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-const Home = () => {
+const Home = ({isDarkMode,setDarkMode,toggleDarkMode}) => {
   const API_URL = "https://fakestoreapi.com/products";
+ 
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
   async function fetchProductData() {
@@ -22,13 +24,14 @@ const Home = () => {
   }
   useEffect(() => {
     fetchProductData();
-  }, []);
+  },[]);
   return (
-    <div>
+    <div >
+       
       {loading ? (
         <Spinner />
       ) : posts.length > 0 ? (
-        <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl p-2 mx-auto space-y-5 min-h-[80vh] hover:border-blue-300">
+        <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl p-2 mx-auto space-y-10 min-h-[80vh] hover:border-blue-300 ">
           {posts.map((post) => (
             <Product key = {post.id} post={post} />
           ))
