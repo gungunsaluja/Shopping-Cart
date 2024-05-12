@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 import { add, remove } from "../redux/Slices/CartSlice";
 
-const Product = ({ post }) => {
+const Product = ({ post ,isDarkMode}) => {
   const { cart } = useSelector((state) => state);
   const dispatch = useDispatch();
   const addToCart = () => {
@@ -16,13 +16,14 @@ const Product = ({ post }) => {
     toast.error("Item removed from cart");
   };
   return (
-    <div className=" cards flex flex-col items-center justify-between hover:shadow-[0_20px_50px_rgba(8,_100,_104,_0.2)] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl transition duration-300 ease-in-out gap-3 p-4 mt-10 mx-2 hover:scale-105 hover:shadow-blue-300">
+    <div>
+<div className=" cards flex flex-col items-center justify-between hover:shadow-[0_20px_50px_rgba(8,_100,_104,_0.2)] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl transition duration-300 ease-in-out gap-3 p-4 mt-10 mx-2 hover:scale-105 hover:shadow-blue-300">
 
 
 
 {/* flex flex-col items-center justify-between 
     hover:scale-110 transition duration-300 ease-in gap-3 p-4 mt-10 ml-5 rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] */}
-      <div>
+      <div className= {`${isDarkMode?"border-white ":"border-black"}`}>
         <p className="text-gray-700 font-semibold text-lg text-left truncate w-40 mt-1">
           {post.title}
         </p>
@@ -64,6 +65,8 @@ const Product = ({ post }) => {
         </button>
       )}
     </div>
+    </div>
+    
   );
 };
 export default Product;

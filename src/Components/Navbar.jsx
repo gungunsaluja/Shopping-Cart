@@ -35,6 +35,13 @@ export default function Navbar ({isDarkMode,setDarkMode,toggleDarkMode}){
                    
 
                     </div>
+
+                </NavLink>
+                <NavLink to = "/login">
+                    <p>Login</p>
+                </NavLink>
+                <NavLink to = "/signup">
+                    <p>SignUp</p>
                 </NavLink>
                
                 <DarkModeSwitch
